@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv add marimo
+          uv pip install marimo
 
       - name: Export marimo notebook
         run: |
