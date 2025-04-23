@@ -22,12 +22,10 @@ jobs:
         uses: astral-sh/setup-uv@v5
 
       - name: Install dependencies
-        run: |
-          uv pip install marimo
+        run: uv add marimo
 
       - name: Export marimo notebook
-        run: |
-          marimo export html-wasm dashboard.py --output build --sandbox
+        run: uv run marimo export html-wasm dashboard.py --output build --sandbox
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
